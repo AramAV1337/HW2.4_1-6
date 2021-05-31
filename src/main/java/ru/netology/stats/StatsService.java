@@ -1,6 +1,6 @@
 package ru.netology.stats;
 
-public  class StatsService {
+public class StatsService {
 
     public long calculateTotalSales(long[] sales) {
         long result = 0;
@@ -11,13 +11,9 @@ public  class StatsService {
     }
 
     public long calculateAverageSales(long[] sales) {
-        long sum = 0;
-        long result = 0;
-        for (long averageSale : sales) {
-            sum += averageSale;
-            result = sum / 12;
-        }
-        return result;
+        long sum;
+        sum = calculateTotalSales(sales) / 12;
+        return sum;
     }
 
     public int minMonthSales(long[] sales) {
