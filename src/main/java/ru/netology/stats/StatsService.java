@@ -40,20 +40,20 @@ public class StatsService {
         return maxMonth + 1;
     }
 
-    public long calculateAboveAverageSales(long[] sales, long average) {
+    public long calculateAboveAverageSales(long[] sales) {
         int countMonth = 0;
         for (long sale : sales) {
-            if (sale > average)
+            if (sale > calculateAverageSales(sales))
                 countMonth++;
         }
         return countMonth;
 
     }
 
-    public long calculateOverAverageSales(long[] sales, long average) {
+    public long calculateOverAverageSales(long[] sales) {
         int countMonth = 0;
         for (long sale : sales) {
-            if (sale < average)
+            if (sale < calculateAverageSales(sales))
                 countMonth++;
         }
         return countMonth;
